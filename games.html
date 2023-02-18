@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="games.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+    <div class="dogs">
+        <img class="dog_face" src="dog_face.png">
+
+    <!-- <img class="dog_face" src="dog_face_hau.png"> -->
+    <button class="button_bark1">Bark!</button>
+        </div>
+        <audio class="bark_1" src="bark_1s.mp3"></audio>
+
+
+        <div class="dogs">
+            <img class="pink_dog" src="pink_dog.png">
+        
+            <!-- <img class="dog_face" src="dog_face_hau.png"> -->
+            <button class="button_bark2">Bark!</button>
+        </div>
+                <audio class="bark_2" src="bark3.mp3"></audio>
+
+
+
+
+                <div class="cats">
+                    <img class="blue_cat" src="blue_cat.png">
+                
+                    <!-- <img class="dog_face" src="dog_face_hau.png"> -->
+                    <button class="button_meow2">Meow!</button>
+                </div>
+                        <audio class="blue_cat_2" src="blue_cat.mp3"></audio>
+                <div class="cats">
+                    <img class="pink_cat" src="pink_cat.png">
+            
+                <!-- <img class="dog_face" src="dog_face_hau.png"> -->
+                <button class="button_meow1">Meow!</button>
+                    </div>
+                    <audio class="pink_cat_1" src="pink_cat_1s.mp3"></audio>
+            
+            
+                   
+                </div>
+
+                <button class="chaos_button">Chaos</button>
+</body>
+<script>
+let dogImg=document.querySelector('.dog_face');
+let buttonBark1=document.querySelector('.button_bark1');
+let bark1=document.querySelector('.bark_1');
+
+let pinkDogImg=document.querySelector('.pink_dog');
+let buttonBark2=document.querySelector('.button_bark2');
+let bark2=document.querySelector('.bark_2');
+
+let pinkCatImg=document.querySelector('.pink_cat');
+let buttonMeow1=document.querySelector('.button_meow1');
+let meow1=document.querySelector('.pink_cat_1');
+
+let blueCatImg=document.querySelector('.blue_cat');
+let buttonMeow2=document.querySelector('.button_meow2');
+let meow2=document.querySelector('.blue_cat_2');
+
+let chaosButton=document.querySelector('.chaos_button');
+
+function meowPinkCat(){
+    buttonMeow1.style.backgroundColor="#ff3a81";
+    pinkCatImg.setAttribute('src', 'pink_cat_meow.png');
+    meow1.play();
+    setTimeout(() => {
+        setTimeout(() => {
+        pinkCatImg.setAttribute('src', 'pink_cat.png');
+
+    }, 400);
+        pinkCatImg.setAttribute('src', 'pink_cat_meow.png');
+
+    }, 600);
+    setTimeout(() => {
+        pinkCatImg.setAttribute('src', 'pink_cat.png');
+        buttonMeow1.style.backgroundColor="white";
+    }, 1200);
+   
+
+}
+
+function meowBlueCat(){
+    buttonMeow2.style.backgroundColor="#bcdff1";
+    blueCatImg.setAttribute('src', 'blue_cat_meow.png');
+    meow2.play();
+    setTimeout(() => {
+        setTimeout(() => {
+        blueCatImg.setAttribute('src', 'blue_cat.png');
+
+    }, 450);
+        blueCatImg.setAttribute('src', 'blue_cat_meow.png');
+
+    }, 800);
+    setTimeout(() => {
+        blueCatImg.setAttribute('src', 'blue_cat.png');
+        buttonMeow2.style.backgroundColor="white";
+    }, 1500);
+   
+
+}
+
+function barkDogFace(){
+    buttonBark1.style.backgroundColor="#f5d1ac";
+    dogImg.setAttribute('src', 'dog_face_hau.png');
+    bark1.play();
+    setTimeout(() => {
+        dogImg.setAttribute('src', 'dog_face.png');
+
+    }, 200);
+    setTimeout(() => {
+        dogImg.setAttribute('src', 'dog_face_hau.png');
+
+    }, 450);
+    setTimeout(() => {
+        dogImg.setAttribute('src', 'dog_face.png');
+        buttonBark1.style.backgroundColor="white";
+    }, 900);
+   
+
+}
+
+function barkPinkDog(){
+    buttonBark2.style.backgroundColor="#ff78b5";
+    pinkDogImg.setAttribute('src', 'pink_dog_hau.png');
+    bark2.play();
+    setTimeout(() => {
+        pinkDogImg.setAttribute('src', 'pink_dog.png');
+    }, 300);
+    setTimeout(() => {
+        pinkDogImg.setAttribute('src', 'pink_dog_hau.png');
+        
+    }, 600);
+    setTimeout(() => {
+        bark2.play();
+    }, 800);
+    setTimeout(() => {
+        pinkDogImg.setAttribute('src', 'pink_dog.png');
+        buttonBark2.style.backgroundColor="white";
+    }, 900);
+   
+
+}
+function letChaos(){
+    barkDogFace();
+    barkPinkDog();
+    meowPinkCat();
+    meowBlueCat();
+}
+buttonBark1.addEventListener('click', barkDogFace);
+buttonBark2.addEventListener('click', barkPinkDog);
+buttonMeow1.addEventListener('click', meowPinkCat)
+buttonMeow2.addEventListener('click', meowBlueCat)
+
+
+chaosButton.addEventListener('click', letChaos)
+
+</script>
+</html>
